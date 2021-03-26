@@ -1,8 +1,18 @@
-h2, p {
-  font-family: sans-serif;
+.container{
+    display: flex;
+    justify-content: center;
 }
 
-.about {
-    margin-left: 15em;
-    margin-right: 15em;
+h2 {
+    font-family: sans-serif;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 16px
+}
+
+.about  {
+    text-align: left;
+    margin: 50px 100px 5px
 }
