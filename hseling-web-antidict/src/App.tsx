@@ -4,6 +4,7 @@ import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import {About} from './pages/about';
 import {Main} from './pages/main';
 import {AppMenu} from "./components/app-menu";
+import {Api} from './pages/api';
 import 'antd/dist/antd.css';
 
 export default function App() {
@@ -18,6 +19,9 @@ export default function App() {
                 </Route>
                 <Route path="/about">
                     <About/>
+                </Route>
+                <Route path="/api">
+                    <Api/>
                 </Route>
                 <Redirect to='/main'/>
             </Switch>
