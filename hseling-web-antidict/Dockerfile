@@ -2,7 +2,9 @@ FROM node:lts-alpine as front
 
 COPY ./hseling-web-antidict/package*.json ./app/hseling_web_antidict/
 
-RUN npm install ./app/hseling_web_antidict/
+WORKDIR ./app/hseling_web_antidict/
+RUN npm install .
+WORKDIR ../..
 COPY ./hseling-web-antidict/ ./app/hseling_web_antidict/
 
 WORKDIR ./app/hseling_web_antidict/
