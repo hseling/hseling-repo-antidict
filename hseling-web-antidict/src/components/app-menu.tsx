@@ -15,6 +15,8 @@ export function AppMenu() {
             </TabPane>
             <TabPane tab="О проекте" key="about">
             </TabPane>
+            <TabPane tab="API" key="api">
+            </TabPane>
         </Tabs>
     );
 }
