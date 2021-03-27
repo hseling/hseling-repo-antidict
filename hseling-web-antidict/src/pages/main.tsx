@@ -103,6 +103,7 @@ export function Main() {
         <Layout className="text-input-output">
             <Space direction="vertical" size={"middle"}>
                 <div className="about-on-main">
+                    <h2  style={{margin: '0 auto', textAlign: 'center'}}>Что такое Antidict? </ h2>
                     <p>Мы рады приветствовать вас на официальном сайте проекта Antidict. Наш проект посвящён
                         автоматическому распознаванию англоязычных заимствований, экспрессивных форм и намеренных
                         искажений (эрративов) в тексте. В основе нашего механизма лежит многоклассовый классификатор,
