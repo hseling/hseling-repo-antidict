@@ -13,6 +13,7 @@ FROM nginx
 
 COPY --from=front /app/hseling_web_antidict/build /usr/share/nginx/html
 COPY --from=front /app/hseling_web_antidict/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=front /app/hseling_web_antidict/nginx.conf.template /etc/nginx/conf.d
 
 EXPOSE 8000
 CMD ["nginx",  "-g", "daemon off;"]
