@@ -3,6 +3,15 @@
     justify-content: center;
 }
 
+h2 {
+    font-family: sans-serif;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 16px
+}
+
 .about-on-main  {
     text-align: left;
     margin: 50px 100px 5px

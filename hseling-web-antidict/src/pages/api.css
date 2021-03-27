@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 16px
+}
+
+.api  {
+    text-align: left;
+    margin: 50px 100px 5px
+}
+
+pre code {
+  white-space: pre-line;
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
