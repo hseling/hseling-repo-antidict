@@ -6,7 +6,7 @@ export function About() {
         <div className="about">
             <h2 style={{margin: '0 auto', textAlign: 'center'}}>О проекте</h2>
             <p>Если вы хотите ознакомиться с нашим проектом подробнее, рекомендуем прочитать нашу <a
-                href="https://docs.google.com/document/d/1emjyoURAS04NAJ9B-wf-T4BE5FbthulvbPZq59v0igo/edit?usp=sharing">статью</a> и
+                href="https://github.com/slowwavesleep/hseling-repo-antidict/blob/master/materials/paper.pdf">статью</a> и
                 заглянуть в наш <a href="https://github.com/hseling/hseling-repo-antidict">репозиторий на github</a>. Краткое
                 содержание нашей статьи приведено ниже.</p>
             <p> Наша статья посвящена исследованию широкого спектра несловарных слов, которые можно встретить в
