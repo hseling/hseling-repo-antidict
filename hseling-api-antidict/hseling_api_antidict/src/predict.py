@@ -6,10 +6,10 @@ import stopwordsiso
 from typing import List, Union, Dict, Any, Set
 from pymorphy2 import MorphAnalyzer
 
-LOCAL_FT_PATH = "hseling-data-antidict/api/models/fasttext/araneum_none_fasttextcbow_300_5_2018.model"
-LOCAL_LOANWORD_CLF_PATH = "hseling-api-antidict/hseling_api_antidict/models/lw_cb_classifier.pkl"
-LOCAL_OBSCENE_CLF_PATH = "hseling-api-antidict//hseling_api_antidict/models/cb_classifier.pkl"
-LOCAL_EXPRESSIVE_CLF_PATH = "hseling-api-antidict//hseling_api_antidict/models/affixed_cb_classifier.pkl"
+# LOCAL_FT_PATH = "hseling-data-antidict/api/models/fasttext/araneum_none_fasttextcbow_300_5_2018.model"
+# LOCAL_LOANWORD_CLF_PATH = "hseling-api-antidict/hseling_api_antidict/models/lw_cb_classifier.pkl"
+# LOCAL_OBSCENE_CLF_PATH = "hseling-api-antidict//hseling_api_antidict/models/cb_classifier.pkl"
+# LOCAL_EXPRESSIVE_CLF_PATH = "hseling-api-antidict//hseling_api_antidict/models/affixed_cb_classifier.pkl"
 
 DOCKER_FT_PATH = "/data/models/fasttext/araneum_none_fasttextcbow_300_5_2018.model"
 DOCKER_LOANWORD_CLF_PATH = "/app/hseling_api_antidict/models/lw_cb_classifier.pkl"
@@ -23,25 +23,28 @@ stops = set("""чей свой из-за вполне вообще вроде с
 даю даешь дает даем даете дают""".split())
 stops = stops | stopwordsiso.stopwords("ru")
 
-try:
-    with open(LOCAL_LOANWORD_CLF_PATH, "rb") as file:
-        loanword_clf = pickle.load(file)
-    with open(LOCAL_OBSCENE_CLF_PATH, "rb") as file:
-        obscene_clf = pickle.load(file)
-    with open(LOCAL_EXPRESSIVE_CLF_PATH, "rb") as file:
-        expressive_clf = pickle.load(file)
-except FileNotFoundError:
-    with open(DOCKER_LOANWORD_CLF_PATH, "rb") as file:
-        loanword_clf = pickle.load(file)
-    with open(DOCKER_OBSCENE_CLF_PATH, "rb") as file:
-        obscene_clf = pickle.load(file)
-    with open(DOCKER_EXPRESSIVE_CLF_PATH, "rb") as file:
-        expressive_clf = pickle.load(file)
+# try:
+#     model = gensim.models.KeyedVectors.load(LOCAL_FT_PATH)
+# except FileNotFoundError:
+model = gensim.models.KeyedVectors.load(DOCKER_FT_PATH)
 
-try:
-    model = gensim.models.KeyedVectors.load(LOCAL_FT_PATH)
-except FileNotFoundError:
-    model = gensim.models.KeyedVectors.load(DOCKER_FT_PATH)
+
+# try:
+#     with open(LOCAL_LOANWORD_CLF_PATH, "rb") as file:
+#         loanword_clf = pickle.load(file)
+#     with open(LOCAL_OBSCENE_CLF_PATH, "rb") as file:
+#         obscene_clf = pickle.load(file)
+#     with open(LOCAL_EXPRESSIVE_CLF_PATH, "rb") as file:
+#         expressive_clf = pickle.load(file)
+# except FileNotFoundError:
+with open(DOCKER_LOANWORD_CLF_PATH, "rb") as file:
+    loanword_clf = pickle.load(file)
+with open(DOCKER_OBSCENE_CLF_PATH, "rb") as file:
+    obscene_clf = pickle.load(file)
+with open(DOCKER_EXPRESSIVE_CLF_PATH, "rb") as file:
+    expressive_clf = pickle.load(file)
+
+
 
 
 def statistics(analysis: List[dict]) -> dict:
